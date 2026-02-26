@@ -117,6 +117,58 @@ function formatTime(seconds) {
   return `${mins}:${secs}`;
 }
 
+function normalizeText(value) {
+  return (value || "").toString().replace(/\s+/g, " ").trim();
+}
+
+function upperFirst(value) {
+  if (!value) {
+    return "";
+  }
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+function ensureQuestionMark(value) {
+  const clean = normalizeText(value);
+  if (!clean) {
+    return "";
+  }
+  if (/[?.!]$/.test(clean)) {
+    return clean;
+  }
+  return `${clean}?`;
+}
+
+function formatQuestionText(rawQuestion) {
+  let text = normalizeText(rawQuestion);
+  if (!text) {
+    return "";
+  }
+
+  const patterns = [
+    [/^choose the correct statement about\s+(.+)$/i, "What is the correct statement about $1"],
+    [/^select the correct method to\s+(.+)$/i, "What is the correct method to $1"],
+    [/^which option is right for\s+(.+)$/i, "Which option is correct for $1"],
+    [/^pick the correct answer for\s+(.+)$/i, "What is the correct answer for $1"],
+    [/^from the given options,\s*select how to\s+(.+)$/i, "How do you $1"],
+    [/^choose the correct statement for\s+(.+)$/i, "What is the correct statement for $1"],
+  ];
+
+  for (const [regex, replacement] of patterns) {
+    if (regex.test(text)) {
+      text = text.replace(regex, replacement);
+      break;
+    }
+  }
+
+  return ensureQuestionMark(upperFirst(text));
+}
+
+function formatSourceText(rawSource) {
+  const source = normalizeText(rawSource || "General Topic");
+  return upperFirst(source);
+}
+
 const examForm = document.getElementById("examForm");
 if (examForm) {
   const meta = document.getElementById("examMeta");
@@ -426,20 +478,23 @@ if (examForm) {
         const selected = answers[currentIndex];
         const isFirst = currentIndex === 0;
         const isLast = currentIndex === questions.length - 1;
+        const displayQuestion = formatQuestionText(question.q || question.question);
+        const displaySource = formatSourceText(question.source);
+        const options = Array.isArray(question.options) ? question.options : [];
 
         questionCard.innerHTML = `
           <div class="question-head">
-            <h3>Q${currentIndex + 1}. ${question.q}</h3>
-            <p class="question-source"><strong>Reference:</strong> ${question.source || "General Topic"}</p>
+            <h3>Q${currentIndex + 1}. ${displayQuestion}</h3>
+            <p class="question-source"><strong>Reference:</strong> ${displaySource}</p>
             <p>Select one correct option.</p>
           </div>
           <div class="option-list">
-            ${question.options
+            ${options
               .map((option, optionIndex) => {
                 const activeClass = selected === optionIndex ? "active" : "";
                 return `
                   <button type="button" class="option-btn ${activeClass}" data-option="${optionIndex}">
-                    <span>${String.fromCharCode(65 + optionIndex)}.</span> ${option}
+                    <span>${String.fromCharCode(65 + optionIndex)}.</span> ${normalizeText(option)}
                   </button>
                 `;
               })

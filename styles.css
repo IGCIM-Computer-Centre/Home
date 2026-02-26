@@ -26,6 +26,15 @@ body {
   line-height: 1.6;
 }
 
+.exam-page {
+  min-height: 100dvh;
+  overflow: auto;
+}
+
+.exam-page.exam-no-header {
+  min-height: 100dvh;
+}
+
 h1, h2, h3 {
   font-family: "Space Grotesk", sans-serif;
   line-height: 1.2;
@@ -42,7 +51,19 @@ p {
 }
 
 .exam-page .container {
-  width: min(1360px, 96%);
+  width: min(1500px, 98%);
+}
+
+.exam-page .section.page-top {
+  padding-top: 2.2rem;
+}
+
+.exam-page main .container {
+  display: block;
+}
+
+.exam-page #examForm {
+  margin-top: 1rem;
 }
 
 .site-header {
@@ -296,6 +317,11 @@ nav a.active {
   gap: 1rem;
 }
 
+.exam-topbar,
+.exam-progress {
+  grid-column: auto;
+}
+
 .exam-topbar {
   display: flex;
   justify-content: space-between;
@@ -358,6 +384,7 @@ nav a.active {
 .camera-monitor {
   padding: 0.8rem 1rem;
   max-width: 380px;
+  margin-top: 0;
 }
 
 .camera-head {
@@ -417,7 +444,7 @@ nav a.active {
 
 .exam-layout {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: minmax(320px, 360px) minmax(0, 1fr);
   gap: 1rem;
 }
 
@@ -427,14 +454,14 @@ nav a.active {
   border: 1px solid rgba(20, 33, 61, 0.08);
   padding: 0.8rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.45rem;
   align-content: start;
   max-height: calc(100vh - 180px);
   overflow-y: auto;
-  position: sticky;
-  top: 96px;
   scrollbar-width: thin;
+  position: sticky;
+  top: 24px;
 }
 
 .palette-btn {
@@ -442,6 +469,7 @@ nav a.active {
   background: #fff;
   border-radius: 8px;
   padding: 0.5rem;
+  min-height: 40px;
   cursor: pointer;
   font-weight: 700;
 }
@@ -463,6 +491,7 @@ nav a.active {
   border-radius: 12px;
   border: 1px solid rgba(20, 33, 61, 0.14);
   padding: 1rem;
+  min-width: 0;
 }
 
 .question-head p {
@@ -520,9 +549,9 @@ nav a.active {
   margin-top: 1rem;
   padding-top: 0.9rem;
   border-top: 1px solid rgba(20, 33, 61, 0.12);
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .btn:disabled {
@@ -550,6 +579,11 @@ nav a.active {
   padding: 1rem 0;
   border-top: 1px solid rgba(20, 33, 61, 0.1);
   background: rgba(255, 255, 255, 0.8);
+}
+
+.exam-page .site-footer {
+  margin-top: 2rem;
+  padding: 1rem 0;
 }
 
 .footer-wrap {
@@ -585,6 +619,12 @@ nav a.active {
   transform: translateY(0);
 }
 
+@media (max-width: 1200px) {
+  .exam-palette {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 920px) {
   .card-grid,
   .stats-grid,
@@ -618,18 +658,30 @@ nav a.active {
     margin-left: auto;
   }
 
+  .exam-page .section.page-top {
+    padding: 1rem 0;
+  }
+
   .exam-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .exam-palette {
-    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.4rem;
     max-height: none;
     position: static;
+    order: 2;
+  }
+
+  .question-card {
+    order: 1;
   }
 
   .camera-monitor {
     max-width: none;
+    order: 3;
   }
 }
 
@@ -650,5 +702,21 @@ nav a.active {
   .footer-wrap {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .exam-topbar {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .exam-top-actions {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .exam-palette {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.4rem;
   }
 }
