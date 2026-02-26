@@ -11,8 +11,9 @@ const contactForm = document.getElementById("contactForm");
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    document.getElementById("contactMsg").textContent = "Message submitted successfully. We will contact you soon.";
-    contactForm.reset();
+    const message = document.getElementById("contactMsg");
+    message.textContent = "Contact form is temporarily unavailable. Please contact the office directly.";
+    message.style.color = "#b91c1c";
   });
 }
 
@@ -20,8 +21,9 @@ const registrationForm = document.getElementById("registrationForm");
 if (registrationForm) {
   registrationForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    document.getElementById("registrationMsg").textContent = "Registration submitted successfully. Our team will call you shortly.";
-    registrationForm.reset();
+    const message = document.getElementById("registrationMsg");
+    message.textContent = "Registration is temporarily unavailable. Please contact the office directly.";
+    message.style.color = "#b91c1c";
   });
 }
 
