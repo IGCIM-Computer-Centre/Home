@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | IGCIM Computer Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">IGCIM <span>Computer Centre</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">?</button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="registration.html">Registration</a>
+        <a href="student_verify.html">Exam Section</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section page-top">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="lead">Get admission details, course counseling, fee information, and exam support.</p>
+
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Centre Address</h3>
+          <p>IGCIM Computer Centre, Main Road, Your City, India</p>
+          <p><strong>Phone:</strong> +91-98765-43210</p>
+          <p><strong>Email:</strong> igcimcentre@gmail.com</p>
+          <p><strong>Timing:</strong> 8:00 AM - 7:00 PM (Mon-Sat)</p>
+        </div>
+
+        <form class="card form" id="contactForm">
+          <h3>Send a Message</h3>
+          <label>Name<input type="text" required /></label>
+          <label>Email<input type="email" required /></label>
+          <label>Message<textarea rows="4" required></textarea></label>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <p class="success" id="contactMsg"></p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© 2026 IGCIM Computer Centre. All rights reserved.</p>
+      <a href="student_verify.html">Go to Exam Section</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration | IGCIM Computer Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">IGCIM <span>Computer Centre</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">?</button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="registration.html" class="active">Registration</a>
+        <a href="student_verify.html">Exam Section</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section page-top">
+    <div class="container">
+      <h1>Student Registration</h1>
+      <p class="lead">Fill this form to apply for admission in certificate, diploma, accounting, and graduation support courses.</p>
+
+      <form class="card form wide" id="registrationForm">
+        <div class="input-grid">
+          <label>Full Name<input type="text" required /></label>
+          <label>Mobile Number<input type="tel" required /></label>
+          <label>Email<input type="email" required /></label>
+          <label>Date of Birth<input type="date" required /></label>
+          <label>Qualification
+            <select required>
+              <option value="">Select</option>
+              <option>10th Pass</option>
+              <option>12th Pass</option>
+              <option>Graduate</option>
+              <option>Pursuing Graduation</option>
+            </select>
+          </label>
+          <label>Course Interested
+            <select required>
+              <option value="">Select Course</option>
+              <option>Basic Computer Course</option>
+              <option>DCA</option>
+              <option>ADCA</option>
+              <option>Tally Prime with GST</option>
+              <option>Web Development</option>
+              <option>Graduation Support (BCA/B.Sc IT)</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Registration</button>
+        <p class="success" id="registrationMsg"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© 2026 IGCIM Computer Centre. All rights reserved.</p>
+      <a href="contact.html">Need Help?</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

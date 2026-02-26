@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Verify | Exam Section</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">IGCIM <span>Computer Centre</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">Menu</button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="registration.html">Registration</a>
+        <a href="student_verify.html" class="active">Exam Section</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section page-top">
+    <div class="container">
+      <h1>Student Verification for Exam</h1>
+      <p class="lead">Select exam and verify student details. Questions will appear on the exam page as per selected exam.</p>
+
+      <form id="verifyForm" class="card form wide">
+        <div class="input-grid">
+          <label>Student Name<input type="text" name="studentName" required /></label>
+          <label>Enrollment Number<input type="text" name="enrollNo" required /></label>
+          <label>Select Exam
+            <select name="examType" required>
+              <option value="">Choose Exam</option>
+              <option value="ADCA">ADCA</option>
+              <option value="DCA">DCA</option>
+              <option value="TALLY">Tally</option>
+              <option value="DTP">DTP</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Proceed to Exam</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© 2026 IGCIM Computer Centre. All rights reserved.</p>
+      <a href="exam.html">Open Exam Page</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
