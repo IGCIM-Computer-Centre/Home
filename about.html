@@ -4,82 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | IGCIM Computer Centre</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --text:#10223f; --muted:#52607a; --primary:#c71f2d; --secondary:#112a56; --soft:#f4f7fb; --border:#dce3ef; --shadow:0 12px 28px rgba(17,42,86,.08); --radius:16px; --container:1120px; }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:"Poppins",sans-serif;color:var(--text);line-height:1.6;background:#fff}
+    .container{width:min(100% - 32px,var(--container));margin-inline:auto}
+    .site-header{position:sticky;top:0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);z-index:20}
+    .nav-wrap{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{text-decoration:none;font-weight:800;color:var(--secondary)}.brand span{color:var(--primary)}
+    .menu-btn{display:none;border:1px solid var(--border);background:#fff;border-radius:10px;width:42px;height:42px;font-size:1.35rem}
+    nav{display:flex;gap:20px}nav a{text-decoration:none;color:var(--text);font-weight:500}nav a.active,nav a:hover{color:var(--primary)}
+    .hero{padding:74px 0;background:linear-gradient(120deg,#112a56 0%,#1e3b73 100%);color:#fff}.hero h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.2}.hero p{max-width:760px;color:rgba(255,255,255,.88);margin-top:14px}
+    section{padding:68px 0}.section-head{margin-bottom:24px}.section-head h2{color:var(--secondary);margin-bottom:8px;font-size:clamp(1.5rem,3vw,2rem)}.section-head p{color:var(--muted)}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;background:#fff}
+    .card h3{color:var(--secondary);margin-bottom:8px}.card p{color:var(--muted)}
+    .logos{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.logo{border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;color:var(--secondary);font-weight:600}
+    .site-footer{background:#0f2348;color:#d6def2;padding:40px 0 20px}.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.site-footer a{color:#d6def2;text-decoration:none}
+    @media (max-width:900px){.menu-btn{display:inline-grid;place-items:center}nav{display:none;position:absolute;right:16px;top:72px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;flex-direction:column;min-width:220px;box-shadow:var(--shadow)}nav.open{display:flex}}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand">IGCIM <span>Computer Centre</span></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">&#9776;</button>
-      <nav id="mainNav">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="registration.html">Registration</a>
-        <a href="student_verify.html">Exam Section</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="section page-top">
-    <div class="container">
-      <h1>About IGCIM Computer Centre</h1>
-      <p class="lead">
-        IGCIM Computer Centre is dedicated to skill-based computer training for students, job seekers,
-        and professionals. We focus on practical education, live projects, and exam-oriented preparation.
-      </p>
-
-      <div class="card-grid two-col">
-        <article class="card">
-          <h3>Our Mission</h3>
-          <p>
-            To empower learners with modern digital and professional computer skills that build careers
-            in offices, business, freelancing, and higher education.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Our Vision</h3>
-          <p>
-            To become a trusted computer training centre offering high-quality and affordable technical
-            education from foundation to advanced levels.
-          </p>
-        </article>
-      </div>
-
-      <div class="section-mini">
-        <h2>Education Available in Our Training Centre</h2>
-        <div class="card-grid">
-          <article class="card"><h3>Certificate Courses</h3><p>Basic IT, Internet, Digital Literacy, Typing, MS Office.</p></article>
-          <article class="card"><h3>Diploma Courses</h3><p>DCA, ADCA with practical and project-based syllabus.</p></article>
-          <article class="card"><h3>Accounting Courses</h3><p>Tally Prime, GST Billing, Payroll, Financial Reports.</p></article>
-          <article class="card"><h3>Programming Intro</h3><p>HTML, CSS, JavaScript basics for web development beginners.</p></article>
-          <article class="card"><h3>Graduation Support</h3><p>BCA/B.Sc IT lab support, assignment help, practical exam practice.</p></article>
-          <article class="card"><h3>Career Skills</h3><p>Interview basics, resume building, and communication for jobs.</p></article>
-        </div>
-      </div>
-    </div>
+  <header class="site-header"><div class="container nav-wrap"><a href="index.html" class="brand">IGCIM <span>Computer Centre</span></a><button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">&#9776;</button><nav id="mainNav"><a href="index.html">Home</a><a href="about.html" class="active">About</a><a href="registration.html">Registration</a><a href="student_verify.html">Exam Section</a><a href="contact.html">Contact</a></nav></div></header>
+  <main>
+    <section class="hero"><div class="container"><h1>About IGCIM Computer Centre</h1><p>Practical computer training institute focused on skill development, employability, and modern IT learning for students and job seekers.</p></div></section>
+    <section><div class="container"><div class="section-head"><h2>Institute Overview</h2><p>Established in 2009, IGCIM provides trusted training with practical labs, structured curriculum, and strong guidance.</p></div><div class="grid"><article class="card"><h3>Mission</h3><p>Deliver affordable, professional computer education that creates real career opportunities.</p></article><article class="card"><h3>Vision</h3><p>Be the most trusted local center for high-quality IT and digital training.</p></article><article class="card"><h3>Why Students Trust Us</h3><p>Transparent teaching process, practical assignments, and mentoring from experienced faculty.</p></article></div></div></section>
+    <section style="background:#f4f7fb"><div class="container"><div class="section-head"><h2>Programs & Training Tracks</h2><p>Comprehensive course options across applications, coding, web, accounting, and design.</p></div><div class="grid"><article class="card"><h3>ADCA / DCA</h3><p>Complete application-based diploma training with practical labs.</p></article><article class="card"><h3>DCP</h3><p>C, C++, Java, SQL and problem-solving oriented programming modules.</p></article><article class="card"><h3>DWD</h3><p>HTML, CSS, JavaScript, ASP.NET and project-based web development.</p></article><article class="card"><h3>Accounting</h3><p>Tally-based practical accounting workflows with business use cases.</p></article><article class="card"><h3>Graphic Designing</h3><p>Creative software training for print and digital content production.</p></article><article class="card"><h3>University Programs</h3><p>Affiliated pathways and guidance for advanced academic progression.</p></article></div></div></section>
+    <section><div class="container"><div class="section-head"><h2>University Affiliations</h2></div><div class="logos"><div class="logo">VGU Jaipur</div><div class="logo">Shubharti University</div><div class="logo">Manglaytan University</div><div class="logo">JS University</div><div class="logo">JNU Jaipur</div></div></div></section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>� 2026 IGCIM Computer Centre. All rights reserved.</p>
-      <a href="registration.html">Apply for Admission</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW87S6YEBP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CW87S6YEBP');
-</script>
+  <footer class="site-footer"><div class="container footer-row"><p>&copy; 2026 IGCIM Computer Centre. All rights reserved.</p><a href="registration.html">Apply for Admission</a></div></footer>
+  <script src="script.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-CW87S6YEBP"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CW87S6YEBP');</script>
 </body>
 </html>
-

@@ -4,105 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IGCIM Computer Centre | Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#fff; --text:#10223f; --muted:#52607a; --primary:#c71f2d; --primary-dark:#a41422; --secondary:#112a56; --soft:#f4f7fb; --border:#dce3ef; --shadow:0 12px 28px rgba(17,42,86,.08); --radius:16px; --container:1120px; }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:"Poppins",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    .container{width:min(100% - 32px,var(--container));margin-inline:auto}
+    .site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(6px)}
+    .nav-wrap{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;text-decoration:none;color:var(--secondary)}.brand span{color:var(--primary)}
+    .menu-btn{display:none;border:1px solid var(--border);background:#fff;border-radius:10px;width:42px;height:42px;font-size:1.35rem}
+    nav{display:flex;gap:20px}nav a{text-decoration:none;color:var(--text);font-weight:500}nav a.active,nav a:hover{color:var(--primary)}
+    .btn{display:inline-flex;text-decoration:none;border:0;border-radius:999px;padding:12px 22px;font-weight:600}.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-dark)}
+    .btn-outline{border:1px solid var(--secondary);color:var(--secondary);background:#fff}
+    .hero{background:linear-gradient(120deg,rgba(17,42,86,.95),rgba(17,42,86,.74)),url("https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;color:#fff;padding:96px 0 88px}
+    .hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.2;max-width:720px}.hero p{max-width:720px;margin-top:14px;color:rgba(255,255,255,.88)}.hero-actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+    .hero .btn-outline{color:#fff;border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.08)} section{padding:72px 0}
+    .section-head{margin-bottom:26px;max-width:760px}.section-head h2{color:var(--secondary);margin-bottom:10px;font-size:clamp(1.5rem,3vw,2rem)}.section-head p{color:var(--muted)}
+    .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .badge{display:inline-block;border-radius:999px;padding:4px 10px;font-size:.78rem;font-weight:600;margin-bottom:10px}.badge.red{background:#ffe7ea;color:#8b1220}.badge.blue{background:#ecf2ff;color:#173a78}
+    .card h3{color:var(--secondary);margin-bottom:8px;font-size:1.05rem}.meta{color:var(--primary);font-size:.86rem;font-weight:600;margin-bottom:8px}.card p{color:var(--muted);font-size:.93rem}
+    .why{background:linear-gradient(180deg,#fff 0%,#f6f9ff 100%)}.features{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .feature{border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:#fff}.icon{width:40px;height:40px;display:grid;place-items:center;border-radius:10px;background:#ecf2ff;color:var(--secondary);font-weight:700;margin-bottom:10px}
+    .feature h4{color:var(--secondary);margin-bottom:6px}.feature p{color:var(--muted);font-size:.92rem}
+    .logos{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.logo{text-align:center;border:1px solid var(--border);border-radius:10px;padding:14px 10px;font-weight:600;color:var(--secondary)}
+    .tests{background:var(--soft)}.site-footer{background:#0f2348;color:#d6def2;padding:52px 0 22px}
+    .footer-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-bottom:24px}.footer-grid h4{color:#fff;margin-bottom:10px}
+    .footer-grid a,.footer-grid p{color:#d6def2;text-decoration:none;display:block;margin-bottom:8px;font-size:.92rem}.footer-bottom{border-top:1px solid rgba(255,255,255,.18);padding-top:12px;font-size:.88rem}
+    @media (max-width:900px){.menu-btn{display:inline-grid;place-items:center}nav{display:none;position:absolute;right:16px;top:72px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;flex-direction:column;min-width:220px;box-shadow:var(--shadow)}nav.open{display:flex}}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand">IGCIM <span>Computer Centre</span></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">&#9776;</button>
-      <nav id="mainNav">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="registration.html">Registration</a>
-        <a href="student_verify.html">Exam Section</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
+  <header class="site-header"><div class="container nav-wrap"><a href="index.html" class="brand">IGCIM <span>Computer Centre</span></a><button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">&#9776;</button><nav id="mainNav"><a href="index.html" class="active">Home</a><a href="about.html">About</a><a href="registration.html">Registration</a><a href="student_verify.html">Exam Section</a><a href="contact.html">Contact</a></nav></div></header>
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="tag">Future-Ready Computer Education</p>
-          <h1>Build Digital Skills with IGCIM Computer Centre</h1>
-          <p>
-            Learn practical computer courses, accounting software, office productivity, coding basics,
-            and graduation-linked programs with industry-focused training.
-          </p>
-          <div class="hero-actions">
-            <a href="registration.html" class="btn btn-primary">Register Now</a>
-            <a href="student_verify.html" class="btn btn-outline">Start Exam</a>
-          </div>
-        </div>
-        <div class="hero-card floating">
-          <h3>Popular Programs</h3>
-          <ul>
-            <li>ADCA - Advanced Diploma in Computer Applications</li>
-            <li>DCA - Diploma in Computer Applications</li>
-            <li>Tally with GST & Payroll</li>
-            <li>Web Development Foundation</li>
-            <li>Graduation Support Courses (BCA/B.Sc IT track)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Courses Available</h2>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Basic Computer Course</h3>
-            <p>Computer fundamentals, Windows, internet usage, typing, and MS Office basics.</p>
-          </article>
-          <article class="card">
-            <h3>Professional Diploma Programs</h3>
-            <p>ADCA and DCA programs covering office automation, practical labs, and project work.</p>
-          </article>
-          <article class="card">
-            <h3>Accounting & Finance Software</h3>
-            <p>Tally Prime with GST filing, invoicing, inventory management, and reporting skills.</p>
-          </article>
-          <article class="card">
-            <h3>Graduation Courses Support</h3>
-            <p>Guidance and lab support for BCA/B.Sc IT learners with assignment and exam preparation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container stats-grid">
-        <div class="stat"><strong>2500+</strong><span>Students Trained</span></div>
-        <div class="stat"><strong>30+</strong><span>Certified Batches</span></div>
-        <div class="stat"><strong>95%</strong><span>Exam Success Rate</span></div>
-        <div class="stat"><strong>100%</strong><span>Practical Lab Focus</span></div>
-      </div>
-    </section>
+    <section class="hero"><div class="container"><h1>Build Career-Ready Computer Skills with IGCIM Computer Centre</h1><p>Industry-oriented diploma and certification programs for students after 10th/12th, graduates, and job seekers. Learn practical skills and move toward real employment opportunities.</p><div class="hero-actions"><a href="registration.html" class="btn btn-primary">Enroll Now</a><a href="#courses" class="btn btn-outline">View Courses</a></div></div></section>
+    <section><div class="container"><div class="section-head"><h2>About IGCIM Computer Centre</h2><p>Established in 2009, IGCIM provides practical computer education with strong mentorship, university-linked learning options, and career-oriented training trusted by local students and families.</p></div><div class="cards"><article class="card"><h3>15+ Years Experience</h3><p>Consistent learning outcomes with student-first guidance and lab practice.</p></article><article class="card"><h3>University Affiliation Support</h3><p>Structured pathways connected to recognized university programs.</p></article><article class="card"><h3>Practical + Career Focus</h3><p>Skills built for jobs, office work, freelancing, and higher studies.</p></article></div></div></section>
+    <section id="courses"><div class="container"><div class="section-head"><h2>Professional Courses</h2><p>Card-based learning tracks designed for employability and real-world practical knowledge.</p></div><div class="cards"><article class="card"><span class="badge red">Featured</span><h3>ADCA</h3><p class="meta">Duration: 12 Months</p><p>Advanced diploma in office tools, internet, accounting basics, and productivity workflow.</p></article><article class="card"><span class="badge blue">Core</span><h3>DCA</h3><p class="meta">Duration: 6-12 Months</p><p>Computer fundamentals, operating systems, typing, office package, and internet practice.</p></article><article class="card"><span class="badge red">Featured</span><h3>DCP</h3><p class="meta">Duration: 12 Months</p><p>Programming with C, C++, Java, SQL, and problem-solving fundamentals.</p></article><article class="card"><span class="badge red">Featured</span><h3>DWD</h3><p class="meta">Duration: 12 Months</p><p>HTML, CSS, JavaScript, ASP.NET basics and project-oriented web development.</p></article><article class="card"><span class="badge blue">Career</span><h3>Accounting Courses</h3><p class="meta">Duration: 3-9 Months</p><p>Tally workflows, GST basics, inventory, and practical business accounting.</p></article><article class="card"><span class="badge blue">Creative</span><h3>Graphic Designing</h3><p class="meta">Duration: 6 Months</p><p>Design principles and software-driven print/digital creative projects.</p></article></div></div></section>
+    <section class="why"><div class="container"><div class="section-head"><h2>Why Choose Us</h2><p>Practical training model with experienced faculty, certification support, and job assistance.</p></div><div class="features"><article class="feature"><div class="icon">01</div><h4>Practical Lab Training</h4><p>Regular hands-on sessions and assignments.</p></article><article class="feature"><div class="icon">02</div><h4>Experienced Faculty</h4><p>Mentors with real implementation knowledge.</p></article><article class="feature"><div class="icon">03</div><h4>Certification Support</h4><p>Program completion support for recognition.</p></article><article class="feature"><div class="icon">04</div><h4>Job Assistance</h4><p>Interview guidance and direction for local opportunities.</p></article></div></div></section>
+    <section><div class="container"><div class="section-head"><h2>University Affiliations</h2></div><div class="logos"><div class="logo">VGU Jaipur</div><div class="logo">Shubharti University</div><div class="logo">Manglaytan University</div><div class="logo">JS University</div><div class="logo">JNU Jaipur</div></div></div></section>
+    <section class="tests"><div class="container"><div class="section-head"><h2>Student Testimonials</h2></div><div class="cards"><article class="card"><p>"Practical classes made me job-ready and confident."</p><p class="meta">Ravi Kumar, ADCA</p></article><article class="card"><p>"DCP helped me understand coding from basics."</p><p class="meta">Neha Singh, DCP</p></article><article class="card"><p>"DWD projects gave me real website building experience."</p><p class="meta">Aman Raj, DWD</p></article></div></div></section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>� 2026 IGCIM Computer Centre. All rights reserved.</p>
-      <a href="student_verify.html">Exam Section</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW87S6YEBP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CW87S6YEBP');
-</script>
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div><h4>IGCIM Computer Centre</h4><p>Skill-focused IT training institute in Munger.</p></div><div><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="registration.html">Registration</a><a href="contact.html">Contact</a></div><div><h4>Courses</h4><a href="#courses">ADCA</a><a href="#courses">DCP</a><a href="#courses">DWD</a><a href="#courses">Accounting</a></div><div><h4>Contact</h4><a href="tel:+919939284408">+91 99392 84408</a><a href="contact.html">Ghoshi Tola, N.D. Road, Munger</a><a href="student_verify.html">Exam Section</a></div></div><div class="footer-bottom">&copy; 2026 IGCIM Computer Centre. All rights reserved.</div></div></footer>
+  <script src="script.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-CW87S6YEBP"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CW87S6YEBP');</script>
 </body>
 </html>
-

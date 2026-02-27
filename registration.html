@@ -4,81 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registration | IGCIM Computer Centre</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --text:#10223f; --muted:#52607a; --primary:#c71f2d; --secondary:#112a56; --border:#dce3ef; --shadow:0 12px 28px rgba(17,42,86,.08); --radius:16px; --container:1120px; }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:"Poppins",sans-serif;color:var(--text);line-height:1.6;background:#fff}
+    .container{width:min(100% - 32px,var(--container));margin-inline:auto}
+    .site-header{position:sticky;top:0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);z-index:20}
+    .nav-wrap{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{text-decoration:none;font-weight:800;color:var(--secondary)}.brand span{color:var(--primary)}
+    .menu-btn{display:none;border:1px solid var(--border);background:#fff;border-radius:10px;width:42px;height:42px;font-size:1.35rem}
+    nav{display:flex;gap:20px}nav a{text-decoration:none;color:var(--text);font-weight:500}nav a.active,nav a:hover{color:var(--primary)}
+    .hero{padding:74px 0;background:linear-gradient(120deg,#112a56 0%,#1e3b73 100%);color:#fff}.hero h1{font-size:clamp(2rem,5vw,2.8rem)}.hero p{max-width:760px;color:rgba(255,255,255,.88);margin-top:12px}
+    section{padding:68px 0}.section-head{margin-bottom:24px}.section-head h2{color:var(--secondary);margin-bottom:8px;font-size:clamp(1.5rem,3vw,2rem)}.section-head p{color:var(--muted)}
+    .card{border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;background:#fff}
+    .form{display:grid;gap:14px}.input-grid{display:grid;gap:10px;grid-template-columns:1fr}.form label{display:grid;gap:6px;color:var(--secondary);font-weight:500;font-size:.92rem}
+    .form input,.form select{width:100%;border:1px solid var(--border);border-radius:10px;padding:11px 12px;font-family:inherit}
+    .btn{display:inline-flex;border:0;border-radius:999px;padding:12px 22px;font-weight:600;background:var(--primary);color:#fff;cursor:pointer}
+    .success{font-size:.92rem;color:#0f5f2f}
+    .site-footer{background:#0f2348;color:#d6def2;padding:40px 0 20px}.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.site-footer a{color:#d6def2;text-decoration:none}
+    @media(min-width:720px){.input-grid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:900px){.menu-btn{display:inline-grid;place-items:center}nav{display:none;position:absolute;right:16px;top:72px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;flex-direction:column;min-width:220px;box-shadow:var(--shadow)}nav.open{display:flex}}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand">IGCIM <span>Computer Centre</span></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">&#9776;</button>
-      <nav id="mainNav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="registration.html" class="active">Registration</a>
-        <a href="student_verify.html">Exam Section</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="section page-top">
-    <div class="container">
-      <h1>Student Registration</h1>
-      <p class="lead">Fill this form to apply for admission in certificate, diploma, accounting, and graduation support courses.</p>
-
-      <form class="card form wide" id="registrationForm">
-        <div class="input-grid">
-          <label>Full Name<input type="text" required /></label>
-          <label>Mobile Number<input type="tel" required /></label>
-          <label>Email<input type="email" required /></label>
-          <label>Date of Birth<input type="date" required /></label>
-          <label>Qualification
-            <select required>
-              <option value="">Select</option>
-              <option>10th Pass</option>
-              <option>12th Pass</option>
-              <option>Graduate</option>
-              <option>Pursuing Graduation</option>
-            </select>
-          </label>
-          <label>Course Interested
-            <select required>
-              <option value="">Select Course</option>
-              <option>Basic Computer Course</option>
-              <option>DCA</option>
-              <option>ADCA</option>
-              <option>Tally Prime with GST</option>
-              <option>Web Development</option>
-              <option>Graduation Support (BCA/B.Sc IT)</option>
-            </select>
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Registration</button>
-        <p class="success" id="registrationMsg"></p>
-      </form>
-    </div>
+  <header class="site-header"><div class="container nav-wrap"><a href="index.html" class="brand">IGCIM <span>Computer Centre</span></a><button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">&#9776;</button><nav id="mainNav"><a href="index.html">Home</a><a href="about.html">About</a><a href="registration.html" class="active">Registration</a><a href="student_verify.html">Exam Section</a><a href="contact.html">Contact</a></nav></div></header>
+  <main>
+    <section class="hero"><div class="container"><h1>Student Registration</h1><p>Apply for ADCA, DCA, DCP, DWD, Accounting, Graphic Designing, and programming/web technology tracks.</p></div></section>
+    <section><div class="container"><div class="section-head"><h2>Admission Form</h2><p>Fill your details and our team will contact you for counseling and admission support.</p></div><form class="card form" id="registrationForm"><div class="input-grid"><label>Full Name<input type="text" required /></label><label>Mobile Number<input type="tel" required /></label><label>Email<input type="email" required /></label><label>Date of Birth<input type="date" required /></label><label>Qualification<select required><option value="">Select</option><option>10th Pass</option><option>12th Pass</option><option>Graduate</option><option>Pursuing Graduation</option></select></label><label>Course Interested<select required><option value="">Select Course</option><option>ADCA</option><option>DCA</option><option>DCP</option><option>DWD</option><option>Accounting Courses</option><option>Graphic Designing</option><option>Programming (C, C++, Java, SQL)</option><option>Web Technologies (HTML, CSS, JavaScript, ASP.NET)</option></select></label></div><button type="submit" class="btn">Submit Registration</button><p class="success" id="registrationMsg"></p></form></div></section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>� 2026 IGCIM Computer Centre. All rights reserved.</p>
-      <a href="contact.html">Need Help?</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW87S6YEBP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CW87S6YEBP');
-</script>
+  <footer class="site-footer"><div class="container footer-row"><p>&copy; 2026 IGCIM Computer Centre. All rights reserved.</p><a href="contact.html">Need Help?</a></div></footer>
+  <script src="script.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-CW87S6YEBP"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CW87S6YEBP');</script>
 </body>
 </html>
-
